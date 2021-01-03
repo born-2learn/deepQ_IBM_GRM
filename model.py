@@ -72,7 +72,7 @@ class SmallNet(nn.Module):
         super(SmallNet, self).__init__()
         self.n_channels = n_channels
         self.conv1 = nn.Conv2d(n_channels, n_channels, 5, padding=(0, 3))
-        self.pool = nn.MaxPool2d(2, 2)
+        self.pool = nn.MaxPool2d(2, 3)
         self.conv2 = nn.Conv2d(n_channels, n_channels, 4, padding=(0, 1))
         if concat_features:
             self.fc1 = nn.Linear(n_channels*2 * 2 + concat_data_len, n_channels*4)
